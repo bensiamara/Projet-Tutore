@@ -26,3 +26,6 @@ WHERE url LIKE '%www.facebook.com%'
  
  SELECT A.Value FROM amzlivre L, amztag A, amzobjtag B, amzlivreclassement C WHERE L.id = B.IdObj AND A.TypeTag="NodeName" AND C.IdLive = L.Id AND B.TypeObj="Livre" AND A.Id=B.IdTag ORDER BY A.Value
 
+/////////////////////////////
+
+//////////////////
