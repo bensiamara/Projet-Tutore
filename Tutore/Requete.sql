@@ -12,7 +12,23 @@ group by C.Value and B.DateDebut order by AVG(Rang)
 
 
 /*             fin  */
-/*
+
+
+/*  requet nouvel*/ 
+
+SELECT SUM((101-A.Rang)/100) , B.DateDebut
+FROM amzobjtag D, amztag C, amzlivreclassement A, amzclassement B 
+    WHERE A.IdLivre=D.IdObj 
+	AND D.TypeObj='Livre' 
+	AND D.IdTag=C.Id 
+	AND C.Value like '%Politique%' 
+	AND C.TypeTag = "NodeName"
+	AND IdClassement=B.Id 
+	AND B.DateDebut >=2000 
+	and B.DateDebut < 2010 
+group by B.DateDebut 
+	order by B.DateDebut 
+/* 
 
 
 requete a utiliser pour generer les donnees d'volution de classmemnt d'une categorie donnees 
